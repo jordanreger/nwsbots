@@ -1,0 +1,10 @@
+github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
+github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
+jordanreger.com/bsky v0.0.0-20240510170850-b67a96fdf40a h1:SbJj5pS1ghuFmb7imN95o73I3OxAX6bPYoa5/J0dLfM=
+jordanreger.com/bsky v0.0.0-20240510170850-b67a96fdf40a/go.mod h1:i306xh7szpho8mJBAP7z7zR8+OjH74dvhEXv6ReGdNY=
+jordanreger.com/bsky/util v0.0.0-20240510170850-b67a96fdf40a h1:u1+G5DsvtgDy47mEmJ0TDdntfG7DGcn9zFlMJh31SJM=
+jordanreger.com/bsky/util v0.0.0-20240510170850-b67a96fdf40a/go.mod h1:qGCb++h6UadQVB7GcWjxd9EpOSPNA0Jf16FUkpxXK48=
+jordanreger.com/nwsbots/social v0.0.0-20240510175058-dbf1776ce1e9 h1:+iWF/pqLuHigCqFBoeUW8XKtYRbxrReQrJ+31HPFhoY=
+jordanreger.com/nwsbots/social v0.0.0-20240510175058-dbf1776ce1e9/go.mod h1:3uxoVcTou6ky9cXj6mNOlabeOa/eErGi6aDUA25lIhk=
+jordanreger.com/wx/warnings v0.0.0-20240510172409-9f61147c89c2 h1:e7hIY21hbUK4XSFxeHDiIfXCF84CGpvM9ZKA+KFkiok=
+jordanreger.com/wx/warnings v0.0.0-20240510172409-9f61147c89c2/go.mod h1:AEUyih7nFTNEaqWSdBzzDtzcg/JwL6HLDoFgaFEIPks=

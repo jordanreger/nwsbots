@@ -1,4 +1,4 @@
-module jordanreger.com/wx/bots/social
+module jordanreger.com/nwsbots/social
 
 go 1.22.0
 

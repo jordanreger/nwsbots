@@ -3,7 +3,7 @@ package social_test
 import (
 	"testing"
 
-	"jordanreger.com/wx/bots/social"
+	"jordanreger.com/nwsbots/social"
 	"jordanreger.com/wx/warnings"
 )
 

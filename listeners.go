@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"jordanreger.com/bsky"
-	"jordanreger.com/wx/bots/social"
+	"jordanreger.com/nwsbots/social"
 	"jordanreger.com/wx/warnings"
 )
 

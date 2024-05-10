@@ -1,7 +1,7 @@
 package main
 
 import (
-	"jordanreger.com/wx/bots/social"
+	"jordanreger.com/nwsbots/social"
 	"os"
 )
 

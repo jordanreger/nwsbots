@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"jordanreger.com/wx/bots/social"
-	"jordanreger.com/wx/products/warnings"
+	"jordanreger.com/wx/warnings"
 )
 
 func TestPost_Real(t *testing.T) {

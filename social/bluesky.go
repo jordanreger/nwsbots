@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	bsky "jordanreger.com/bsky/api"
+	"jordanreger.com/bsky"
 )
 
 type BskyUser struct {

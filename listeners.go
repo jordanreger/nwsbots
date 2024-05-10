@@ -3,9 +3,9 @@ package main
 import (
 	"time"
 
-	bsky "jordanreger.com/bsky/api"
+	"jordanreger.com/bsky"
 	"jordanreger.com/wx/bots/social"
-	"jordanreger.com/wx/products/warnings"
+	"jordanreger.com/wx/warnings"
 )
 
 func t_l(warning chan string) {

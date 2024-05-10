@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	bsky "jordanreger.com/bsky/api"
+	"jordanreger.com/bsky"
 )
 
 type taggedposts_res struct {

@@ -1,6 +1,6 @@
 package main
 
-import bsky "jordanreger.com/bsky/api"
+import "jordanreger.com/bsky"
 
 var t_chan = make(chan string)
 var tstm_chan = make(chan string)

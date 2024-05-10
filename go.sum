@@ -4,11 +4,17 @@ jordanreger.com/bsky v0.0.0-20240510170850-b67a96fdf40a h1:SbJj5pS1ghuFmb7imN95o
 jordanreger.com/bsky v0.0.0-20240510170850-b67a96fdf40a/go.mod h1:i306xh7szpho8mJBAP7z7zR8+OjH74dvhEXv6ReGdNY=
 jordanreger.com/bsky/api v0.0.0-20240502184306-5d4d98343818 h1:Pe9WgGq4tRMih6RyEJ7VgZGaOL6n5A0keFfmH9oCYRM=
 jordanreger.com/bsky/api v0.0.0-20240502184306-5d4d98343818/go.mod h1:ylSf8bwtNibjMkuSgfF661zNqKEYiDY1DGtkQyDsV/0=
+jordanreger.com/bsky/api v0.0.0-20240510170850-b67a96fdf40a h1:eEYDtIoZOL220JBKNB5HrH2DcqLElytvjTAY8+7FJZQ=
+jordanreger.com/bsky/api v0.0.0-20240510170850-b67a96fdf40a/go.mod h1:ylSf8bwtNibjMkuSgfF661zNqKEYiDY1DGtkQyDsV/0=
 jordanreger.com/bsky/util v0.0.0-20240508231046-0413e632a573 h1:LCdRBHq3+1z6Y9STkUsAlZj+VdzSysGe3ahPbMZLnP0=
 jordanreger.com/bsky/util v0.0.0-20240508231046-0413e632a573/go.mod h1:qGCb++h6UadQVB7GcWjxd9EpOSPNA0Jf16FUkpxXK48=
+jordanreger.com/bsky/util v0.0.0-20240510170850-b67a96fdf40a h1:u1+G5DsvtgDy47mEmJ0TDdntfG7DGcn9zFlMJh31SJM=
+jordanreger.com/bsky/util v0.0.0-20240510170850-b67a96fdf40a/go.mod h1:qGCb++h6UadQVB7GcWjxd9EpOSPNA0Jf16FUkpxXK48=
 jordanreger.com/wx/bots/social v0.0.0-20240508220938-a3e327a3c567 h1:TQILVCu2kUHqFqEo/wkCy6Gx+VUpEPNFal/snr9S+UA=
 jordanreger.com/wx/bots/social v0.0.0-20240508220938-a3e327a3c567/go.mod h1:sWxNKWfK1nzoO0GvolOjjtTtjTg1yI81d7p6tfM9pas=
 jordanreger.com/wx/products/warnings v0.0.0-20240502191254-d54b742838fd h1:q8Sbe/GndTe/eEpKpM5+0KhELnPYhdGpWSPyr3LtyJA=
 jordanreger.com/wx/products/warnings v0.0.0-20240502191254-d54b742838fd/go.mod h1:3ComrnTdBucOypvd7mYyuS7SREEAQCqGMxmF5ql8EiE=
+jordanreger.com/wx/products/warnings v0.0.0-20240510172409-9f61147c89c2 h1:DwtkugBsNJPDX9hgtqWOkYuqXRZPdOSIwoawAONXXWM=
+jordanreger.com/wx/products/warnings v0.0.0-20240510172409-9f61147c89c2/go.mod h1:3ComrnTdBucOypvd7mYyuS7SREEAQCqGMxmF5ql8EiE=
 jordanreger.com/wx/warnings v0.0.0-20240510172409-9f61147c89c2 h1:e7hIY21hbUK4XSFxeHDiIfXCF84CGpvM9ZKA+KFkiok=
 jordanreger.com/wx/warnings v0.0.0-20240510172409-9f61147c89c2/go.mod h1:AEUyih7nFTNEaqWSdBzzDtzcg/JwL6HLDoFgaFEIPks=

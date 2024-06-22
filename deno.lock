@@ -1,0 +1,95 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@nws/api": "jsr:@nws/api@0.0.1",
+      "jsr:@std/dotenv": "jsr:@std/dotenv@0.224.0",
+      "npm:@atproto/api": "npm:@atproto/api@0.12.8"
+    },
+    "jsr": {
+      "@nws/api@0.0.1": {
+        "integrity": "476c0781a9964aaf3fbbc64ec0cd25b8b4362f37e9f87af7ad101440569e1214"
+      },
+      "@std/dotenv@0.224.0": {
+        "integrity": "d9234cdf551507dcda60abb6c474289843741d8c07ee8ce540c60f5c1b220a1d"
+      }
+    },
+    "npm": {
+      "@atproto/api@0.12.8": {
+        "integrity": "sha512-aNbiDuaslCxS3XyMRK40/ERerqAmk5HjQc7ivTBuPQy1Svmphl5ccnsUVxJ81xjpxjv9Fli2iPgomvRFdusuNQ==",
+        "dependencies": {
+          "@atproto/common-web": "@atproto/common-web@0.3.0",
+          "@atproto/lexicon": "@atproto/lexicon@0.4.0",
+          "@atproto/syntax": "@atproto/syntax@0.3.0",
+          "@atproto/xrpc": "@atproto/xrpc@0.5.0",
+          "multiformats": "multiformats@9.9.0",
+          "tlds": "tlds@1.252.0"
+        }
+      },
+      "@atproto/common-web@0.3.0": {
+        "integrity": "sha512-67VnV6JJyX+ZWyjV7xFQMypAgDmjVaR9ZCuU/QW+mqlqI7fex2uL4Fv+7/jHadgzhuJHVd6OHOvNn0wR5WZYtA==",
+        "dependencies": {
+          "graphemer": "graphemer@1.4.0",
+          "multiformats": "multiformats@9.9.0",
+          "uint8arrays": "uint8arrays@3.0.0",
+          "zod": "zod@3.23.7"
+        }
+      },
+      "@atproto/lexicon@0.4.0": {
+        "integrity": "sha512-RvCBKdSI4M8qWm5uTNz1z3R2yIvIhmOsMuleOj8YR6BwRD+QbtUBy3l+xQ7iXf4M5fdfJFxaUNa6Ty0iRwdKqQ==",
+        "dependencies": {
+          "@atproto/common-web": "@atproto/common-web@0.3.0",
+          "@atproto/syntax": "@atproto/syntax@0.3.0",
+          "iso-datestring-validator": "iso-datestring-validator@2.2.2",
+          "multiformats": "multiformats@9.9.0",
+          "zod": "zod@3.23.7"
+        }
+      },
+      "@atproto/syntax@0.3.0": {
+        "integrity": "sha512-Weq0ZBxffGHDXHl9U7BQc2BFJi/e23AL+k+i5+D9hUq/bzT4yjGsrCejkjq0xt82xXDjmhhvQSZ0LqxyZ5woxA==",
+        "dependencies": {}
+      },
+      "@atproto/xrpc@0.5.0": {
+        "integrity": "sha512-swu+wyOLvYW4l3n+VAuJbHcPcES+tin2Lsrp8Bw5aIXIICiuFn1YMFlwK9JwVUzTH21Py1s1nHEjr4CJeElJog==",
+        "dependencies": {
+          "@atproto/lexicon": "@atproto/lexicon@0.4.0",
+          "zod": "zod@3.23.7"
+        }
+      },
+      "graphemer@1.4.0": {
+        "integrity": "sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==",
+        "dependencies": {}
+      },
+      "iso-datestring-validator@2.2.2": {
+        "integrity": "sha512-yLEMkBbLZTlVQqOnQ4FiMujR6T4DEcCb1xizmvXS+OxuhwcbtynoosRzdMA69zZCShCNAbi+gJ71FxZBBXx1SA==",
+        "dependencies": {}
+      },
+      "multiformats@9.9.0": {
+        "integrity": "sha512-HoMUjhH9T8DDBNT+6xzkrd9ga/XiBI4xLr58LJACwK6G3HTOPeMz4nB4KJs33L2BelrIJa7P0VuNaVF3hMYfjg==",
+        "dependencies": {}
+      },
+      "tlds@1.252.0": {
+        "integrity": "sha512-GA16+8HXvqtfEnw/DTcwB0UU354QE1n3+wh08oFjr6Znl7ZLAeUgYzCcK+/CCrOyE0vnHR8/pu3XXG3vDijXpQ==",
+        "dependencies": {}
+      },
+      "uint8arrays@3.0.0": {
+        "integrity": "sha512-HRCx0q6O9Bfbp+HHSfQQKD7wU70+lydKVt4EghkdOvlK/NlrF90z+eXV34mUd48rNvVJXwkrMSPpCATkct8fJA==",
+        "dependencies": {
+          "multiformats": "multiformats@9.9.0"
+        }
+      },
+      "zod@3.23.7": {
+        "integrity": "sha512-NBeIoqbtOiUMomACV/y+V3Qfs9+Okr18vR5c/5pHClPpufWOrsx8TENboDPe265lFdfewX2yBtNTLPvnmCxwog==",
+        "dependencies": {}
+      }
+    }
+  },
+  "redirects": {
+    "https://esm.town/v/nws/api": "https://esm.town/v/nws/api?v=8",
+    "https://esm.town/v/nws/warnings": "https://esm.town/v/nws/warnings?v=33"
+  },
+  "remote": {
+    "https://esm.town/v/nws/api?v=8": "e4aea5c1a9c25c46f219903bb40a811300087384883f154d66ae9858fee43157",
+    "https://esm.town/v/nws/warnings?v=33": "af1b0746826c1fc0b06753c7b81e141c91f5537f234613dac6a90ccd57a9b199"
+  }
+}

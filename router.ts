@@ -1,6 +1,5 @@
-// import { RichText, BskyAgent } from "npm:@atproto/api";
-// import "jsr:@std/dotenv/load";
 import { kv } from "./main.ts";
+import { postToBluesky } from "./bsky.ts";
 
 const api = (warning: string) =>
   new URL(

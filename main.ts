@@ -1,19 +1,27 @@
 import { update } from "./router.ts";
 
+//export const kv = await Deno.openKv(":memory:");
 export const kv = await Deno.openKv();
 
-await kv.set(["tornado", "severe_thunderstorm", "flash flood"], "test");
+/*
+await kv.delete([
+  "tornado",
+  "severe_thunderstorm",
+  "flash flood",
+  "flash_flood",
+]);
+*/
 
-update("tornado");
-update("severe_thunderstorm");
+//update("tornado");
+//update("severe_thunderstorm");
 update("flash_flood");
 
-Deno.cron("tornado", "*/1 * * * *", () => update("tornado"));
-Deno.cron(
-  "severe thunderstorm",
-  "*/1 * * * *",
-  () => update("severe thunderstorm"),
-);
+//Deno.cron("tornado", "*/1 * * * *", () => update("tornado"));
+//Deno.cron(
+//  "severe thunderstorm",
+//  "*/1 * * * *",
+//  () => update("severe thunderstorm"),
+//);
 Deno.cron("flash flood", "*/1 * * * *", () => update("flash flood"));
 
 Deno.serve({ port: 8080 }, async (req) => {

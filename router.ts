@@ -37,8 +37,7 @@ export async function update(warning_type: string) {
     await kv.set([warning_type], latest.properties.id);
     for (let i = 0; i < queueLength; i++) {
       console.log(`${warning_type}(${i}): ${features[i].properties.id}`);
-      //const post = await getPost(warning_type);
-      //postToBluesky(warning_type, post);
+      postToBluesky(features[i], warning_type);
     }
   }
 }

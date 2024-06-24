@@ -3,15 +3,6 @@ import { update } from "./router.ts";
 //export const kv = await Deno.openKv(":memory:");
 export const kv = await Deno.openKv();
 
-/*
-await kv.delete([
-  "tornado",
-  "severe_thunderstorm",
-  "flash flood",
-  "flash_flood",
-]);
-*/
-
 update("tornado");
 update("severe_thunderstorm");
 update("flash_flood");

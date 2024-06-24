@@ -33,9 +33,6 @@ Deno.serve({ port: 8080 }, async (req) => {
     const headline = await kv.get(["flash_flood"]).then((res) => res.value);
     return new Response(headline);
   }
-
-  return new Response(
-    `<meta name="color-scheme" content="light dark"><ul><li><a href="/tornado">tornado</a></li><li><a href="/severe_thunderstorm">severe thunderstorm</a></li><li><a href="/flash_flood">flash flood</a></li></ul>`,
-    { headers: { "Content-Type": "text/html;charset=utf-8" } },
-  );
+  
+  return Response.redirect("https://bsky.app/profile/nwsbots.bsky.social/lists/3kuold5ugp724", 301);
 });

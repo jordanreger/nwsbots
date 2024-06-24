@@ -34,8 +34,9 @@ export async function update(warning_type: string) {
 
   if (last !== latest.properties.id) {
     await kv.set([warning_type], latest.properties.id);
+
+    // TODO: add a rate limit
     for (let i = 0; i < queueLength; i++) {
-      console.log(`${warning_type}(${i}): ${features[i].properties.id}`);
       postToBluesky(features[i], warning_type);
     }
   }

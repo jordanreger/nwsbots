@@ -35,4 +35,4 @@ other communication. You can follow it at
 ## Contributing
 
 Send patches/bug reports to
-[~jordanreger/public-inbox@lists.sr.ht](mailto:~jordanreger/public-inbox@lists.sr.ht?subject=[PATCH])
+[~jordanreger/public-inbox@lists.sr.ht](mailto:~jordanreger/public-inbox@lists.sr.ht?subject=[PATCH] nwsbots)

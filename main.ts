@@ -15,24 +15,8 @@ Deno.cron(
 );
 Deno.cron("flash flood", "*/1 * * * *", () => update("flash_flood"));
 
-Deno.serve({ port: 8080 }, async (req) => {
-  const url = new URL(req.url);
-  const path = url.pathname;
-
-  if (path === "/tornado") {
-    const headline = await kv.get(["tornado"]).then((res) => res.value);
-    return new Response(headline);
-  }
-  if (path === "/severe_thunderstorm") {
-    const headline = await kv.get(["severe_thunderstorm"]).then((res) =>
-      res.value
-    );
-    return new Response(headline);
-  }
-  if (path === "/flash_flood") {
-    const headline = await kv.get(["flash_flood"]).then((res) => res.value);
-    return new Response(headline);
-  }
-  
-  return Response.redirect("https://bsky.app/profile/nwsbots.bsky.social/lists/3kuold5ugp724", 301);
-});
+Deno.serve(() =>
+  Response.redirect(
+    "https://bsky.app/profile/nwsbots.bsky.social/lists/3kuold5ugp724",
+  )
+);

@@ -20,9 +20,9 @@ Deno.cron("tornado", "*/1 * * * *", () => update("tornado"));
 Deno.cron(
   "severe thunderstorm",
   "*/1 * * * *",
-  () => update("severe thunderstorm"),
+  () => update("severe_thunderstorm"),
 );
-Deno.cron("flash flood", "*/1 * * * *", () => update("flash flood"));
+Deno.cron("flash flood", "*/1 * * * *", () => update("flash_flood"));
 
 Deno.serve({ port: 8080 }, async (req) => {
   const url = new URL(req.url);

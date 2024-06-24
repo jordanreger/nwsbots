@@ -12,16 +12,16 @@ await kv.delete([
 ]);
 */
 
-//update("tornado");
-//update("severe_thunderstorm");
+update("tornado");
+update("severe_thunderstorm");
 update("flash_flood");
 
-//Deno.cron("tornado", "*/1 * * * *", () => update("tornado"));
-//Deno.cron(
-//  "severe thunderstorm",
-//  "*/1 * * * *",
-//  () => update("severe thunderstorm"),
-//);
+Deno.cron("tornado", "*/1 * * * *", () => update("tornado"));
+Deno.cron(
+  "severe thunderstorm",
+  "*/1 * * * *",
+  () => update("severe thunderstorm"),
+);
 Deno.cron("flash flood", "*/1 * * * *", () => update("flash flood"));
 
 Deno.serve({ port: 8080 }, async (req) => {

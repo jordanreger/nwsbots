@@ -24,7 +24,7 @@ await test.login({
 
 const rt = new BskyAgent({ service: "https://public.api.bsky.app" });
 
-const DateTimeFormat = new Intl.DateTimeFormat("en-US", {
+const DateTimeFormat = new Intl.DateTimeFormat("en-GB", {
   dateStyle: "full",
   timeStyle: "long",
   timeZone: "UTC",

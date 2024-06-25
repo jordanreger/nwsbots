@@ -16,6 +16,11 @@ await flashflood.login({
   identifier: "nwsflashflood.bsky.social",
   password: Deno.env.get("flashflood_pass"),
 });
+const test = new BskyAgent({ service: "https://bsky.social" });
+await test.login({
+  identifier: "nwstest.bsky.social",
+  password: Deno.env.get("test_pass"),
+});
 
 const rt = new BskyAgent({ service: "https://public.api.bsky.app" });
 
@@ -43,11 +48,11 @@ export async function postToBluesky(warning: object, warning_type) {
     if (!hashtags.includes(hashtag)) hashtags.push(hashtag);
   }
 
+  // TODO: add this back:
+  // \n\n#${warning_type.replace("_", "")} ${hashtags.join(" ")}
   const post_text = `${event} ${
     messageType === "Update" ? "continues for" : "including"
-  } ${areaDesc} until ${DateTimeFormat.format(expires)}\n\n#${
-    warning_type.replace("_", "")
-  } ${hashtags.join(" ")}`;
+  } ${areaDesc} until ${DateTimeFormat.format(expires)}`;
 
   const post = new RichText({
     text: post_text,
@@ -70,6 +75,9 @@ export async function postToBluesky(warning: object, warning_type) {
       break;
     case "flash_flood":
       await flashflood.post(postRecord);
+      break;
+    case "test":
+      await test.post(postRecord);
       break;
     default:
       throw new Error("Please use correct warning_type name");

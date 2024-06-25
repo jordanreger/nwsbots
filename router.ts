@@ -9,9 +9,13 @@ const api = (warning: string) =>
   );
 
 export async function update(warning_type: string) {
-  const features = await fetch(api(warning_type))
-    .then((res) => res.json())
-    .then((res) => res.features);
+  let features;
+  try {
+    features = await fetch(api(warning_type));
+  } catch (error) {
+    throw new Error(error);
+  }
+  features = await features.json().then((res) => res.features);
 
   let last = await kv.get([warning_type]).then((res) => res.value);
   if (features.length === 0) {
@@ -37,7 +41,7 @@ export async function update(warning_type: string) {
 
     // TODO: add a rate limit
     for (let i = 0; i < queueLength; i++) {
-      postToBluesky(features[i], warning_type);
+      postToBluesky(features[i], "test");
     }
   }
 }

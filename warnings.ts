@@ -8,7 +8,7 @@ const api = (warning: string) =>
     }`,
   );
 
-export async function update(warning_type: string) {
+export async function getFeatures(warning_type: string) {
   let features;
   try {
     features = await fetch(api(warning_type));
@@ -16,7 +16,11 @@ export async function update(warning_type: string) {
     throw new Error(error);
   }
   features = await features.json().then((res) => res.features);
+  return features;
+}
 
+export async function update(warning_type: string) {
+  const features = await getFeatures(warning_type);
   let last = await kv.get([warning_type]).then((res) => res.value);
   if (features.length === 0) {
     if (last !== `No current ${warning_type} warnings`) {
@@ -28,7 +32,7 @@ export async function update(warning_type: string) {
   if (!last) await kv.set([warning_type], latest.properties.id);
   last = await kv.get([warning_type]).then((res) => res.value);
 
-  let queueLength = 1;
+  let queueLength = 0;
   for (let i = 0; i < features.length; i++) {
     const feature = features[i];
     if (feature.properties.id !== last) queueLength++;
@@ -40,8 +44,8 @@ export async function update(warning_type: string) {
     await kv.set([warning_type], latest.properties.id);
 
     // TODO: add a rate limit
-    for (let i = 0; i < queueLength; i++) {
-      postToBluesky(features[i], "test");
+    for (let i = queueLength; i > 0; i--) {
+      postToBluesky(features[i - 1], "test");
     }
   }
 }

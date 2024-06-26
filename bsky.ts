@@ -16,21 +16,24 @@ await flashflood.login({
   identifier: "nwsflashflood.bsky.social",
   password: Deno.env.get("flashflood_pass"),
 });
+/*
 const test = new BskyAgent({ service: "https://bsky.social" });
 await test.login({
   identifier: "nwstest.bsky.social",
   password: Deno.env.get("test_pass"),
 });
+*/
 
 const rt = new BskyAgent({ service: "https://public.api.bsky.app" });
 
-const DateTimeFormat = new Intl.DateTimeFormat("en-GB", {
-  dateStyle: "full",
+const DateTimeFormat = new Intl.DateTimeFormat("en-US", {
+  dateStyle: "short",
   timeStyle: "long",
   timeZone: "UTC",
+  hour12: false,
 });
 
-export async function postToBluesky(warning: object, warning_type) {
+function getPost(warning: object): string {
   const _id = warning.properties.id,
     areaDesc = warning.properties.areaDesc,
     expires = new Date(warning.properties.expires),
@@ -48,11 +51,16 @@ export async function postToBluesky(warning: object, warning_type) {
     if (!hashtags.includes(hashtag)) hashtags.push(hashtag);
   }
 
-  // TODO: add this back:
-  // \n\n#${warning_type.replace("_", "")} ${hashtags.join(" ")}
   const post_text = `${event} ${
     messageType === "Update" ? "continues for" : "including"
-  } ${areaDesc} until ${DateTimeFormat.format(expires)}`;
+  } ${areaDesc} until ${DateTimeFormat.format(expires)}\n\n
+  #${warning_type.replace("_", "")} ${hashtags.join(" ")}`;
+
+  return post_text;
+}
+
+export async function postToBluesky(warning: object, warning_type: string) {
+  const post_text = getPost(warning);
 
   const post = new RichText({
     text: post_text,
@@ -76,10 +84,47 @@ export async function postToBluesky(warning: object, warning_type) {
     case "flash_flood":
       await flashflood.post(postRecord);
       break;
-    case "test":
-      await test.post(postRecord);
-      break;
+    //case "test":
+    //  await test.post(postRecord);
+    //  break;
     default:
       throw new Error("Please use correct warning_type name");
   }
 }
+
+/*
+export async function matchesLastPost(warning_type: string) {
+  let actor;
+
+  switch (warning_type) {
+    case "tornado":
+      actor = "nwstornado.bsky.social";
+      break;
+    case "severe_thunderstorm":
+      actor = "nwsseveretstorm.bsky.social";
+      break;
+    case "flash_flood":
+      actor = "nwsflashflood.bsky.social";
+      break;
+    //case "test":
+    //  actor = "nwstest.bsky.social";
+    //  break;
+    default:
+      throw new Error("Please use correct warning_type name");
+  }
+
+  const latest = await rt.api.app.bsky.feed.getAuthorFeed({
+    actor: actor,
+    limit: 5,
+  }).then((res) => res.data).then((res) => res.feed);
+
+  let matches = false;
+  latest.forEach((post) => {
+    if (getPost(post.record.text) === lastPost) {
+      matches = true;
+    }
+  });
+
+  return matches;
+}
+*/

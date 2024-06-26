@@ -1,7 +1,6 @@
-import { update } from "./router.ts";
+import { update } from "./warnings.ts";
 
 export const kv = await Deno.openKv();
-//export const kv = await Deno.openKv();
 
 update("tornado");
 update("severe_thunderstorm");

@@ -11,7 +11,11 @@ const api = (warning: string) =>
 export async function getFeatures(warning_type: string) {
   let features;
   try {
-    features = await fetch(api(warning_type));
+    features = await fetch(api(warning_type), {
+      headers: {
+        "User-Agent": `nws.deno.dev: ${warning_type} (nws@jordanreger.com)`,
+      },
+    });
   } catch (error) {
     throw new Error(error);
   }

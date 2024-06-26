@@ -53,10 +53,9 @@ function getPost(warning: object): string {
 
   const post_text = `${event} ${
     messageType === "Update" ? "continues for" : "including"
-  } ${areaDesc} until ${DateTimeFormat.format(expires)}\n\n
-  #${event.replace(" ", "").toLowerCase().replace("warning", "")} ${
-    hashtags.join(" ")
-  }`;
+  } ${areaDesc} until ${DateTimeFormat.format(expires)}\n\n#${
+    event.replace(" ", "").toLowerCase().replace("warning", "")
+  } ${hashtags.join(" ")}`;
 
   return post_text;
 }

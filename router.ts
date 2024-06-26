@@ -28,7 +28,7 @@ export async function update(warning_type: string) {
   if (!last) await kv.set([warning_type], latest.properties.id);
   last = await kv.get([warning_type]).then((res) => res.value);
 
-  let queueLength = 0;
+  let queueLength = 1;
   for (let i = 0; i < features.length; i++) {
     const feature = features[i];
     if (feature.properties.id !== last) queueLength++;

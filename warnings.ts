@@ -45,7 +45,7 @@ export async function update(warning_type: string) {
 
     // TODO: add a rate limit
     for (let i = queueLength; i > 0; i--) {
-      postToBluesky(features[i - 1], "test");
+      postToBluesky(features[i - 1], warning_type);
     }
   }
 }

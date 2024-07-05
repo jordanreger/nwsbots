@@ -29,7 +29,7 @@ export async function update(warning_type) {
   }
   const latest = features[0];
   const latestPost = getPost(latest);
-  if (!last) await kv.set([warning_type], post);
+  if (!last) await kv.set([warning_type], latestPost);
   last = await kv.get([warning_type]).then((res) => res.value);
 
   let queueLength = 0;
@@ -46,7 +46,7 @@ export async function update(warning_type) {
 
     // TODO: add a rate limit
     for (let i = queueLength; i > 0; i--) {
-      postToBluesky(features[i - 1], warning_type);
+      postToBluesky(features[i - 1]);
     }
   }
 }

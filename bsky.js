@@ -33,7 +33,7 @@ const DateTimeFormat = new Intl.DateTimeFormat("en-US", {
   hour12: false,
 });
 
-function getPost(warning) {
+export function getPost(warning) {
   const _id = warning.properties.id,
     areaDesc = warning.properties.areaDesc,
     expires = new Date(warning.properties.expires),

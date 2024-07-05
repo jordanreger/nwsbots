@@ -1,5 +1,5 @@
 import { kv } from "./main.js";
-import { postToBluesky } from "./bsky.js";
+import { postToBluesky, getPost } from "./bsky.js";
 
 const api = (warning) => new URL(`https://api.weather.gov/alerts/active?status=actual&event=${encodeURIComponent(warning.replaceAll("_", " ") + " warning")}`);
 
@@ -28,19 +28,21 @@ export async function update(warning_type) {
     return;
   }
   const latest = features[0];
-  if (!last) await kv.set([warning_type], latest.properties.id);
+  const latestPost = getPost(latest);
+  if (!last) await kv.set([warning_type], post);
   last = await kv.get([warning_type]).then((res) => res.value);
 
   let queueLength = 0;
   for (let i = 0; i < features.length; i++) {
     const feature = features[i];
-    if (feature.properties.id !== last) queueLength++;
+    const featurePost = getPost(feature);
+    if (featurePost !== last) queueLength++;
     else break;
   }
   if (queueLength === features.length) queueLength = 1;
 
-  if (last !== latest.properties.id) {
-    await kv.set([warning_type], latest.properties.id);
+  if (last !== latestPost) {
+    await kv.set([warning_type], latestPost);
 
     // TODO: add a rate limit
     for (let i = queueLength; i > 0; i--) {

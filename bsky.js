@@ -63,7 +63,6 @@ export function getPost(warning) {
 export async function postToBluesky(warning) {
   const post_text = getPost(warning);
   const warning_type = warning.properties.event.toLowerCase().replace(" warning", "");
-  console.log(warning_type);
 
   const post = new RichText({
     text: post_text,

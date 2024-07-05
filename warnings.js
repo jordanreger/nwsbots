@@ -31,7 +31,6 @@ export async function update(warning_type) {
   const latestPost = getPost(latest);
   if (!last) await kv.set([warning_type], latestPost);
   last = await kv.get([warning_type]).then((res) => res.value);
-  console.log(last + " - " + latestPost);
 
   let queueLength = 0;
   for (let i = 0; i < features.length; i++) {

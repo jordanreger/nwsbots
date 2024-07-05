@@ -1,14 +1,9 @@
-import { kv } from "./main.ts";
-import { postToBluesky } from "./bsky.ts";
+import { kv } from "./main.js";
+import { postToBluesky } from "./bsky.js";
 
-const api = (warning: string) =>
-  new URL(
-    `https://api.weather.gov/alerts/active?status=actual&event=${
-      encodeURIComponent(warning.replaceAll("_", " ") + " warning")
-    }`,
-  );
+const api = (warning) => new URL(`https://api.weather.gov/alerts/active?status=actual&event=${encodeURIComponent(warning.replaceAll("_", " ") + " warning")}`);
 
-export async function getFeatures(warning_type: string) {
+export async function getFeatures(warning_type) {
   let features;
   try {
     features = await fetch(api(warning_type), {
@@ -23,7 +18,7 @@ export async function getFeatures(warning_type: string) {
   return features;
 }
 
-export async function update(warning_type: string) {
+export async function update(warning_type) {
   const features = await getFeatures(warning_type);
   let last = await kv.get([warning_type]).then((res) => res.value);
   if (features.length === 0) {

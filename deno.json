@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "dev": "deno task clean && deno run --watch -A --unstable-cron --unstable-kv main.ts",
+    "dev": "deno run --watch -A --unstable-cron --unstable-kv main.js",
     "clean": "deno fmt && deno lint",
-    "clearKv": "deno run -A --unstable-kv kv.ts"
+    "clearKv": "deno run -A --unstable-kv kv.js"
   }
 }

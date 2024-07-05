@@ -33,7 +33,7 @@ const DateTimeFormat = new Intl.DateTimeFormat("en-US", {
   hour12: false,
 });
 
-function getPost(warning: object): string {
+function getPost(warning) {
   const _id = warning.properties.id,
     areaDesc = warning.properties.areaDesc,
     expires = new Date(warning.properties.expires),
@@ -60,8 +60,9 @@ function getPost(warning: object): string {
   return post_text;
 }
 
-export async function postToBluesky(warning: object, warning_type: string) {
+export async function postToBluesky(warning) {
   const post_text = getPost(warning);
+  const warning_type = warning.properties.event.toLowerCase().replace(" warning", "");
 
   const post = new RichText({
     text: post_text,
@@ -92,40 +93,3 @@ export async function postToBluesky(warning: object, warning_type: string) {
       throw new Error("Please use correct warning_type name");
   }
 }
-
-/*
-export async function matchesLastPost(warning_type: string) {
-  let actor;
-
-  switch (warning_type) {
-    case "tornado":
-      actor = "nwstornado.bsky.social";
-      break;
-    case "severe_thunderstorm":
-      actor = "nwsseveretstorm.bsky.social";
-      break;
-    case "flash_flood":
-      actor = "nwsflashflood.bsky.social";
-      break;
-    //case "test":
-    //  actor = "nwstest.bsky.social";
-    //  break;
-    default:
-      throw new Error("Please use correct warning_type name");
-  }
-
-  const latest = await rt.api.app.bsky.feed.getAuthorFeed({
-    actor: actor,
-    limit: 5,
-  }).then((res) => res.data).then((res) => res.feed);
-
-  let matches = false;
-  latest.forEach((post) => {
-    if (getPost(post.record.text) === lastPost) {
-      matches = true;
-    }
-  });
-
-  return matches;
-}
-*/

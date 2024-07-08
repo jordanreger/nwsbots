@@ -34,5 +34,5 @@ other communication. You can follow it at
 
 ## Contributing
 
-Send patches/bug reports to <~jordanreger/public-inbox@lists.sr.ht> with the
-subject `[PATCH] nwsbots`
+Send patches/bug reports to <~jordanreger/nwsbots@lists.sr.ht> with the
+subject `[PATCH] {what you're fixing}`

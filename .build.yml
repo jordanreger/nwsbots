@@ -1,0 +1,11 @@
+image: alpine/edge
+secrets:
+  - f366526b-fdc5-489e-927d-8b26ff8aad4a
+environment:
+  REPO: nwsbots
+  GH_USER: jordanreger
+tasks:
+  - push-to-github: |
+      cd ~/"${REPO}"
+      git config --global credential.helper store
+      git push --mirror "https://github.com/${GH_USER}/${REPO}"

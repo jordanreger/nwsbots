@@ -1,0 +1,8 @@
+github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
+github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
+jordanreger.com/bsky/api v0.0.0-20240502184306-5d4d98343818 h1:Pe9WgGq4tRMih6RyEJ7VgZGaOL6n5A0keFfmH9oCYRM=
+jordanreger.com/bsky/api v0.0.0-20240502184306-5d4d98343818/go.mod h1:ylSf8bwtNibjMkuSgfF661zNqKEYiDY1DGtkQyDsV/0=
+jordanreger.com/bsky/util v0.0.0-20240502183753-0e5dd1df59ea h1:WBhmOi7MGzV5MF7oaGQwqQ8MJwbpYOzezKpC1DilhVg=
+jordanreger.com/bsky/util v0.0.0-20240502183753-0e5dd1df59ea/go.mod h1:qGCb++h6UadQVB7GcWjxd9EpOSPNA0Jf16FUkpxXK48=
+jordanreger.com/wx/products/warnings v0.0.0-20240502191254-d54b742838fd h1:q8Sbe/GndTe/eEpKpM5+0KhELnPYhdGpWSPyr3LtyJA=
+jordanreger.com/wx/products/warnings v0.0.0-20240502191254-d54b742838fd/go.mod h1:3ComrnTdBucOypvd7mYyuS7SREEAQCqGMxmF5ql8EiE=
